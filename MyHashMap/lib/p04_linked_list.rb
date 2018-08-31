@@ -59,6 +59,7 @@ class LinkedList
   end
 
   def append(key, val)
+    raise "#{key} already in list" if include?(key)
     new_node = Node.new(key, val)
     new_node.prev = @tail.prev
     @tail.prev.next = new_node
